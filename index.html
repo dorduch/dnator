@@ -8,7 +8,7 @@
             var modifiedText = text.split('ORIGIN');
             modifiedText = modifiedText[modifiedText.length - 1];
             modifiedText = modifiedText.split('//');
-            modifiedText = modifiedText[modifiedText.length - 1];
+            modifiedText = modifiedText[0];
             modifiedText = clearText(modifiedText);
             return modifiedText.substring(fromIndex, toIndex);
 
@@ -22,7 +22,7 @@
             const text = document.getElementById("raw-text").value;
             const fromIndex = document.getElementById("from-index").value;
             const toIndex = document.getElementById("to-index").value;
-            document.getElementById("result").textContent = generateText(text, parseInt(fromIndex), parseInt(toIndex));
+            document.getElementById("result").textContent = generateText(text, parseInt(fromIndex) -1 , parseInt(toIndex));
         }
 
     </script>
